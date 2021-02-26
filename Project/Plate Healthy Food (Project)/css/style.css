@@ -12,6 +12,10 @@ body {
     height: auto;
 }
 
+* button:focus {
+    outline: none;
+}
+
 * a {
     text-decoration: none;
     transition: all 0.3s;
@@ -23,17 +27,19 @@ body {
 }
 
 * p {
-    margin: 0%;
+    margin: 0;
 }
 
 * ul {
     padding: 0;
     margin: 0;
-}
-
-* li {
     list-style: none;
 }
+
+
+/* * ul li {
+    list-style: none;
+} */
 
 h1,
 h2,
@@ -50,6 +56,9 @@ h6 {
     text-transform: uppercase;
 }
 
+
+/* main menu */
+
 #main-menu {
     position: absolute;
     top: 0;
@@ -64,6 +73,7 @@ h6 {
     align-items: center;
     padding: 35px 0;
     /*     background: #71b85f; */
+    /*   position: fixed; */
 }
 
 .navbar-logo img {
@@ -520,9 +530,9 @@ h6 {
     border-radius: 60px 4px;
     transition: all 0.3s;
     color: #000000;
-    margin-left: 0;
+    /*   margin-left: 0;
     margin-left: auto;
-    margin-right: auto;
+    margin-right: auto; */
 }
 
 .post-classic:hover {
@@ -547,6 +557,17 @@ h6 {
 
 .bg-1 {
     background-color: #fff8bd;
+    /*  margin-right: auto; */
+}
+
+.bg-2 {
+    background-color: #ecfcf9;
+    /*     margin-left: auto; */
+}
+
+.bg-3 {
+    background-color: #dff9d9;
+    /*     margin-left: auto; */
 }
 
 .post-classic-title {
@@ -560,8 +581,7 @@ h6 {
     margin-top: 10px;
 }
 
-
-/* .post-classic::before {
+.post-classic-before [class*='col-']:nth-child(3n+1) .post-classic::after {
     content: '';
     display: block;
     position: absolute;
@@ -573,14 +593,21 @@ h6 {
     width: 37%;
     height: 14px;
     transition: all 0.3s;
-} */
-
-.bg-2 {
-    background-color: #ecfcf9;
 }
 
-.bg-3 {
-    background-color: #dff9d9;
+.post-classic-before [class*='col-']:nth-child(3n+2) .post-classic::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 42%;
+    right: -41%;
+    transform: rotateX(180deg);
+    background-image: url(../images/arrow-110x14.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 37%;
+    height: 14px;
+    transition: all 0.3s;
 }
 
 
