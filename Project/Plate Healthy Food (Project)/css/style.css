@@ -561,7 +561,7 @@ h6 {
 }
 
 
-/* .post-classic::after {
+/* .post-classic::before {
     content: '';
     display: block;
     position: absolute;
