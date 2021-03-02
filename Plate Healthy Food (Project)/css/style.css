@@ -6,6 +6,12 @@ body {
     color: rgba(0, 0, 0, 0.7);
 }
 
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1200px !important;
+    }
+}
+
 * img {
     display: inline-block;
     max-width: 100%;
@@ -60,6 +66,29 @@ h6 {
     display: flex;
 }
 
+.row-mb-50>* {
+    margin-bottom: 50px;
+}
+
+.row-mb-40>* {
+    margin-bottom: 40px;
+}
+
+@media only screen and (max-width:1200px) {
+    h2 {
+        font-size: 28px !important;
+        font-weight: 700 !important;
+    }
+    .bg-1,
+    .bg-2,
+    .bg-3 {
+        margin: 0 auto !important;
+    }
+    .post-classic::after {
+        display: none !important;
+    }
+}
+
 
 /* main menu */
 
@@ -72,11 +101,8 @@ h6 {
 }
 
 .navbar-menu {
-    position: relative;
     align-items: center;
     padding: 35px 0;
-    /*     background: #71b85f; */
-    /*   position: fixed; */
 }
 
 .navbar-logo img {
@@ -146,6 +172,10 @@ h6 {
 
 .btn-navbar-aside-open-toggle:hover {
     box-shadow: 2px 8px 7px rgb(0 0 0 / 10%);
+}
+
+.navbar {
+    margin-left: 65px;
 }
 
 
@@ -298,8 +328,8 @@ h6 {
 }
 
 .chef-box img {
-    margin: 0 auto;
-    /*     margin-left: 0; */
+    /*  margin: 0 auto; */
+    margin-left: 0;
     max-width: 79.5%;
     display: block;
     filter: drop-shadow(30px 30px 20px rgba(0, 0, 0, 0.15));
@@ -369,6 +399,18 @@ h6 {
     height: 1.5px;
     width: 22px;
     background-color: #71b85f;
+}
+
+@media (min-width:1200px) {
+    .chef-box img {
+        margin: 0 auto;
+    }
+}
+
+@media only screen and (max-width:1200px) {
+    #section-about {
+        padding: 50px 0px !important;
+    }
 }
 
 
@@ -584,6 +626,22 @@ h6 {
     margin-top: 10px;
 }
 
+
+/* .post-classic-after [class*='col-']:nth-child(3n+1) .post-classic {
+    margin-left: 0;
+    margin-right: auto;
+}
+
+.post-classic-after [class*='col-']:nth-child(3n+2) .post-classic {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.post-classic-after [class*='col-']:nth-child(3n) .post-classic {
+    margin-left: auto;
+    margin-right: 0;
+} */
+
 .post-classic-after [class*='col-']:nth-child(3n+1) .post-classic::after {
     content: '';
     display: block;
@@ -657,6 +715,18 @@ h6 {
     position: absolute;
 }
 
+@media only screen and (max-width: 991px) {
+    .box-custom-posotion {
+        opacity: .4;
+    }
+    #section-features {
+        padding: 50px 0;
+    }
+    .box-icon-text {
+        color: #ffffff !important;
+    }
+}
+
 
 /* section-what-our-clients-say */
 
@@ -728,6 +798,12 @@ h6 {
 
 .client-img img {
     position: relative;
+}
+
+@media only screen and (max-width: 991px) {
+    .client-img {
+        max-width: 26%;
+    }
 }
 
 .testemonials h3 {
