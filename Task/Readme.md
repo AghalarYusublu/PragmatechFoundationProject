@@ -39,3 +39,11 @@ Compiler- Hər hansı bir proqramlaşdırma dilindən istifadə edərək inkişa
  
  <!-- .............................................................................................. -->
 
+Javascript operatorlar haqqinda umumi melumatlari oxudum.
+JavaScript DataTypes haqqinda umumi melumatlari oxudum.
+
+JavaScript Function:
+Javascript ile yazilmis bir funksiya müəyyən bir əməliyyatı yerinə yetirmək üçün hazırlanmış bir kod blokudur.
+Bir məqsədə xidmət edən proqram parçalarıdır.Funksiya icra edildikdə, bir əməliyyat yerinə yetirməsi və ya bir dəyəri qaytarması teleb olunur.
+..............
+Prompt metodu ve Javascript Function istifade edib toplama emeliyyatini yazdim
