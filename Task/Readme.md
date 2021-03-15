@@ -1,9 +1,9 @@
-FLEXBOX FROGGY - bütün tapşırıqlar  bitdi.
+#FLEXBOX FROGGY - bütün tapşırıqlar  bitdi.
 
  <!-- .............................................................................................. -->
 
 
-Translator ve assembler nədir? Compiler və interpreter ilə aralarındakı fərqlər nələrdir?
+#Translator ve assembler nədir? Compiler və interpreter ilə aralarındakı fərqlər nələrdir?
 
 Translator- “machine code”-dan fərqli dillərdə yazılan kodu(source code) “machine code”-a(object code) çevirmək üçün istifadə olunur. Bu translator-un müxtəlif növləri vardır.
 
@@ -39,11 +39,23 @@ Compiler- Hər hansı bir proqramlaşdırma dilindən istifadə edərək inkişa
  
  <!-- .............................................................................................. -->
 
-Javascript operatorlar haqqinda umumi melumatlari oxudum.
-JavaScript DataTypes haqqinda umumi melumatlari oxudum.
+##-Javascript operatorlar haqqinda umumi melumatlari oxudum.
+##-JavaScript DataTypes haqqinda umumi melumatlari oxudum.
 
-JavaScript Function:
+#JavaScript Function:
 Javascript ile yazilmis bir funksiya müəyyən bir əməliyyatı yerinə yetirmək üçün hazırlanmış bir kod blokudur.
 Bir məqsədə xidmət edən proqram parçalarıdır.Funksiya icra edildikdə, bir əməliyyat yerinə yetirməsi və ya bir dəyəri qaytarması teleb olunur.
-..............
-Prompt metodu ve Javascript Function istifade edib toplama emeliyyatini yazdim
+
+-##Prompt metodu ve Javascript Function istifade edib toplama emeliyyatini yazdim
+
+
+#Günümüzdə istifadə olunan Js,PHP,Python və C# dillərində ortaq istifadə olunan data növləri hansılardır və qısaca izahatlarını yazın.
+-Ortaq Data types:
+        *string - mətn dəyərlərini proqramdakı bir string dəyişkəndə saxlayırıq.
+        *Number- 
+        -tam ədədi saxlaya bilir və məlumat aralığı genişdirş
+        -İnt tipli dəyişənlər 32 bit-lik deyeri saxlayır.
+        -float onluq ədədlərdən ibarət dəyişən tipi
+
+        *Boolean -"Doğru" və "Yanlış" olaraq iki dəyər alan bir dəyişkən növüdür. İdarəetmə proseslərində tez-tez istifadə olunur.
+
