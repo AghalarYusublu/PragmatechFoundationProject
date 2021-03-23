@@ -97,6 +97,13 @@
         .post-classic::after {
             display: none !important;
         }
+        .navbar-logo {
+            position: relative;
+            left: 35px;
+        }
+        .navbar-logo img {
+            max-height: 46px !important;
+        }
     }
     
     @media only screen and (max-width:991px) {
