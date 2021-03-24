@@ -61,18 +61,18 @@ Bir məqsədə xidmət edən proqram parçalarıdır.Funksiya icra edildikdə, b
           İdarəetmə proseslərində tez-tez istifadə olunur.
 
 
-#JS metodları
--document.getElementById(id)
+# JS metodları
+- document.getElementById(id)
 * müəyyən edilmiş dəyər ilə ID atributu olan elementi qaytarır.
 * return metoddur
 * object tipində məlumat qaytarır
 * string tipində argument tələb edir
--document.getElementsByTagName(name)
+- document.getElementsByTagName(name)
 * GetElementsByTagName () bir HTMLCollection qaytarır.GetElementsByTagName (tagname) metodu sənəddəki (sənəd üçün) və ya NodeList obyekti (qovşaqların toplusu) olaraq göstərilən etiketi olan uşaq qovşaqları (qovşaq üçün) arasında tapılmış bütün elementləri qaytarır. 
 * return metoddur
 * object tipində məlumat qaytarır
 * string tipində argument tələb edir
--document.getElementsByClassName(name)
+- document.getElementsByClassName(name)
 * bu metod bu metodun parametrində göstərilən sinif adına malik elementlər (qovşaqlar) toplusu olan NodeList obyektini qaytarır.
 * return metoddur
 * object tipində məlumat qaytarır
