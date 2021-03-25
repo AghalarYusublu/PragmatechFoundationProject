@@ -82,3 +82,13 @@ Bir məqsədə xidmət edən proqram parçalarıdır.Funksiya icra edildikdə, b
     * return metoddur
     * object tipində məlumat qaytarır
     * parametrinde string tipli argument tələb edir.
+- document.createElement(element)
+    * HTML obyekti yaratmaq üçün istifadə olunur. Yaddaşda dinamik şəkildə HTML obyektləri yaratmaq üçün istifadə olunur.
+    * return metoddur
+    * object tipində məlumat qaytarır
+    * parametrinde string tipinde yaratmaq istədiyiniz elementin adını teleb edir
+- document.removeChild(element)
+    * RemoveChild () metodu, göstərilən elementin müəyyən edilmiş bir uşaq düyününü silir.Silinmiş nodu təmsil edən bir düyün obyekti və ya düyün yoxdursa null qaytarir
+    * return metoddur
+    * object tipində məlumat qaytarır
+    * node object tipinde silmək istədiyiniz düyün obyekti tələb olunur.
