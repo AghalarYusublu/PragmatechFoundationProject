@@ -92,3 +92,12 @@ Bir məqsədə xidmət edən proqram parçalarıdır.Funksiya icra edildikdə, b
     * return metoddur
     * object tipində məlumat qaytarır
     * node object tipinde silmək istədiyiniz düyün obyekti tələb olunur.
+- document.write(text)
+    * Write () metodu bir sənədə HTML ifadələri və ya JavaScript kodu yazır.
+    * deyer qaytarmir (No return value)
+- element.addEventListener
+    * AddEventListener () metodu göstərilən elementə hadisə işləyicisi əlavə edir.
+- onclick event
+    * Onclick event-i, istifadəçi bir elementi tıkladıqda baş verir.
+- onload event
+    * Yükləmə hadisəsi bir obyekt yükləndikdə baş verir.
