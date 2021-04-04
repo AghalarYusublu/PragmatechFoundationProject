@@ -60,3 +60,44 @@ Bir məqsədə xidmət edən proqram parçalarıdır.Funksiya icra edildikdə, b
         * Boolean -"Doğru" və "Yanlış" olaraq iki dəyər alan bir dəyişkən növüdür.
           İdarəetmə proseslərində tez-tez istifadə olunur.
 
+
+# JS metodları
+- document.getElementById(id)
+    * müəyyən edilmiş dəyər ilə ID atributu olan elementi qaytarır.
+    * return metoddur
+    * object tipində məlumat qaytarır
+    * string tipində argument tələb edir
+- document.getElementsByTagName(name)
+    * GetElementsByTagName () bir HTMLCollection qaytarır.GetElementsByTagName (tagname) metodu sənəddəki (sənəd üçün) və ya NodeList obyekti (qovşaqların toplusu) olaraq             göstərilən etiketi olan uşaq qovşaqları (qovşaq üçün) arasında tapılmış bütün elementləri qaytarır. 
+    * return metoddur
+    * object tipində məlumat qaytarır
+    * string tipində argument tələb edir
+- document.getElementsByClassName(name)
+    * bu metod bu metodun parametrində göstərilən sinif adına malik elementlər (qovşaqlar) toplusu olan NodeList obyektini qaytarır.
+    * return metoddur
+    * object tipində məlumat qaytarır
+    * parametrinde string tipli argument tələb edir
+- document.querySelector()
+    * QuerySelector () metodu sənəddə (sənəd üçün) və ya bu metodun parametri olaraq göstərilən CSS seçicisinə uyğun uşaq qovşaqları arasında (qovşaq üçün) tapılan ilk elementi       qaytarır. CSS seçicisinə heç bir element uyğun gəlmirsə, bu metod null qaytarır.
+    * return metoddur
+    * object tipində məlumat qaytarır
+    * parametrinde string tipli argument tələb edir.
+- document.createElement(element)
+    * HTML obyekti yaratmaq üçün istifadə olunur. Yaddaşda dinamik şəkildə HTML obyektləri yaratmaq üçün istifadə olunur.
+    * return metoddur
+    * object tipində məlumat qaytarır
+    * parametrinde string tipinde yaratmaq istədiyiniz elementin adını teleb edir
+- document.removeChild(element)
+    * RemoveChild () metodu, göstərilən elementin müəyyən edilmiş bir uşaq düyününü silir.Silinmiş nodu təmsil edən bir düyün obyekti və ya düyün yoxdursa null qaytarir
+    * return metoddur
+    * object tipində məlumat qaytarır
+    * node object tipinde silmək istədiyiniz düyün obyekti tələb olunur.
+- document.write(text)
+    * Write () metodu bir sənədə HTML ifadələri və ya JavaScript kodu yazır.
+    * deyer qaytarmir (No return value)
+- element.addEventListener
+    * AddEventListener () metodu göstərilən elementə hadisə işləyicisi əlavə edir.
+- onclick event
+    * Onclick event-i, istifadəçi bir elementi tıkladıqda baş verir.
+- onload event
+    * Yükləmə hadisəsi bir obyekt yükləndikdə baş verir.
