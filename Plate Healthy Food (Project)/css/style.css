@@ -124,6 +124,19 @@ h6 {
     }
 }
 
+@media (max-width:1200px) and (min-width:990px) {
+    .navbar-collapse {
+        margin-left: 15%;
+    }
+}
+
+@media only screen and (min-width:1200) {
+    .navbar-expand-lg .navbar-collapse {
+        display: flex !important;
+        flex-basis: auto;
+    }
+}
+
 @media only screen and (max-width:991px) {
     .navbar-toggler {
         position: absolute;
@@ -134,9 +147,9 @@ h6 {
         left: 0% !important;
     }
     .decorative-circle {
-        width: 322.92px !important;
-        height: 322.92px !important;
-        top: 6% !important;
+        width: 292.5px !important;
+        height: 292.5px !important;
+        top: 9% !important;
         left: 50% !important;
     }
     .box-round-wrap {
@@ -144,28 +157,58 @@ h6 {
         top: 4% !important;
         position: absolute !important;
     }
+    .mobile-mg-t {
+        margin-top: 237px !important;
+    }
+    #section-banner h1 {
+        font-size: 36px !important;
+        margin-top: 35px !important;
+        line-height: 1.1 !important;
+    }
+    #section-banner h1 .point {
+        top: 35px !important;
+        left: 5px !important;
+    }
+    .navbar-collapse {
+        color: #ffffff;
+        background: #71b85f;
+        box-shadow: 15px 15px 15px rgb(0 0 0 / 15%);
+        position: fixed;
+        left: 0;
+        top: 50px;
+        bottom: -56px;
+        z-index: -1;
+        width: 270px;
+        padding: 30px 0 80px;
+        overflow-y: auto;
+        overflow-x: hidden;
+        transform: translateX(-110%);
+        transition: all .3s linear;
+    }
+    .navbar-collapse.show {
+        transform: translateX(0);
+    }
+    .navbar-collapse .navbar-nav {
+        display: block;
+        margin: 15px 0;
+        text-align: left;
+    }
+    .navbar-collapse .navbar-nav .nav-item {
+        text-align: left;
+        margin: 0 !important;
+    }
+    .navbar-collapse .navbar-nav a {
+        display: block;
+        padding: 20px 56px 20px 0px;
+        color: rgba(255, 255, 255, 0.7) !important;
+    }
+    .navbar-collapse .navbar-nav a:hover {
+        color: #ffffff !important;
+    }
+    .menu-link::before {
+        display: none !important;
+    }
 }
-
-
-/* .collapse.navbar-collapse {
-       color: #ffffff;
-       background: #71b85f;
-       box-shadow: 0 0 15px rgb(0 0 0 / 15%);
-       position: fixed;
-       left: 0;
-       top: -56px;
-       bottom: -56px;
-       z-index: 1079;
-       width: 270px;
-       padding: 112px 0 81px;
-       font-size: 14px;
-       line-height: 34px;
-       transform: translateX(-110%);
-   }
-   
-   .collapse.navbar-collapse.show {
-       transform: translateX(0);
-   } */
 
 
 /* main menu */
@@ -373,6 +416,15 @@ select option:hover {
     top: 425px;
     right: 50%;
     transform: translate(-50%, -50%);
+    transition: all .3s linear;
+}
+
+.decorative-circle.active {
+    width: 3038px;
+    height: 3038px;
+    left: 759.5px;
+    top: 425px;
+    z-index: 99999;
 }
 
 #section-banner {
@@ -405,6 +457,7 @@ select option:hover {
     margin-top: 55px;
     font-size: 70px;
     font-weight: 900;
+    line-height: 85px;
 }
 
 #section-banner h1 .point {
@@ -432,13 +485,14 @@ select option:hover {
 #section-banner .postitle {
     font-weight: 500;
     line-height: 21px;
-    margin-top: 15px;
+    margin-top: 20px;
     color: rgba(255, 255, 255, 0.7);
 }
 
 .pagination {
     display: inline-block;
     border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+    margin-top: 15%;
 }
 
 .page-num-1 {
@@ -464,7 +518,7 @@ select option:hover {
 
 .box-round-wrap {
     left: 12vw;
-    top: 110px;
+    top: 90px;
     position: relative;
     max-width: 40vw;
 }
@@ -1027,6 +1081,16 @@ select option:hover {
     padding-left: 60px;
 }
 
+.testemonials-owl {
+    overflow: hidden;
+}
+
+@media (min-width: 576px) {
+    .testemonials-words {
+        padding-left: 70px !important;
+    }
+}
+
 .testemonials-words p {
     margin-top: 9px;
     font-size: 18px;
@@ -1039,8 +1103,30 @@ select option:hover {
     margin-top: 37px;
 }
 
+.testemonials-slides {
+    transition: all 0.25s ease 0s;
+    width: 1500px;
+    height: 245px;
+}
+
+.testemonials-slides .slide {
+    width: 500px;
+}
+
 .pagination-dots .page-dot {
     display: inline-block
+}
+
+.pagination-dots .owl-dot {
+    margin-left: 13px;
+    margin-right: 13px;
+}
+
+.pagination-dots .owl-dot.active {
+    margin-right: 13px;
+    height: 2px;
+    background-color: #000000;
+    width: 43px;
 }
 
 .page-dot a {
@@ -1049,7 +1135,7 @@ select option:hover {
     transition: all 0.3s ease-in-out;
 }
 
-.page-dot span {
+.page-dot .owl-dot span {
     display: block;
     width: 100%;
     height: 1px;
@@ -1127,4 +1213,213 @@ select option:hover {
 
 .footer-list li a:hover {
     color: #71b85f;
+}
+
+
+/* Slider banner */
+
+.banner-slide {
+    display: none;
+}
+
+.banner-slide.active {
+    display: block;
+}
+
+.banner-slide.active h3 {
+    animation: slide .5s ease;
+    animation-duration: 900;
+    animation-delay: 900;
+    /*  "duration":900,"delay":900;*/
+}
+
+.banner-slide.active h1 {
+    animation: slide .7s ease;
+    animation-duration: 1000;
+    animation-delay: 1000;
+}
+
+.banner-slide.active p {
+    animation: slide .9s ease;
+    animation-duration: 1100;
+    animation-delay: 1100;
+}
+
+.banner-slide.active .postitle {
+    animation: slide 1s ease;
+    animation-duration: 1200;
+    animation-delay: 1200;
+}
+
+@keyframes slide {
+    0% {
+        opacity: 0;
+        transform: translateX(300px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(px);
+    }
+}
+
+.banner-slide.active .box-round-wrap {
+    animation: img-banner .7s ease;
+    animation-duration: 1000;
+    animation-delay: 1000;
+}
+
+@keyframes img-banner {
+    0% {
+        opacity: 0;
+        transform: translateY(200px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+
+/* Scroll-top */
+
+.scroll-top {
+    position: fixed;
+    right: 15px;
+    bottom: 15px;
+    z-index: 100;
+    width: 55px;
+    height: 55px;
+    font-size: 20px;
+    line-height: 51px;
+    color: #ffffff !important;
+    background: #71b85f;
+    overflow: hidden;
+    text-align: center;
+    transition: .45s all ease-in-out;
+    transform: translate3d(0, 100px, 0);
+    border-radius: 10em;
+    box-shadow: inset 0px -4px 2px rgb(0 0 0 / 25%);
+}
+
+.scroll-top:hover {
+    color: #ffffff;
+    background: #111111;
+    text-decoration: none;
+}
+
+.scroll-top.active {
+    transform: translate3d(0, 0, 0);
+}
+
+
+/* Preloader */
+
+.preloader {
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 10000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background: #ffffff;
+    transition: .3s all ease;
+}
+
+.preloader.loaded {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.loader .ball {
+    width: 80px;
+    height: 80px;
+    background-color: #71b85f;
+    border-radius: 100%;
+}
+
+.loader {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    filter: url(#gooey);
+    animation: rotate 2s ease infinite;
+}
+
+.loader .ball:nth-child(1) {
+    animation: pull-left 2s ease infinite;
+}
+
+.loader .ball:nth-child(2) {
+    animation: shimmy 2s ease infinite;
+}
+
+.loader .ball:nth-child(3) {
+    animation: pull-right 2s ease infinite;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(720deg);
+    }
+}
+
+@keyframes shimmy {
+    0%,
+    55% {
+        transform: translate(0, 0);
+    }
+    60%,
+    65% {
+        transform: translate(-12px, 12px);
+    }
+    80%,
+    85% {
+        transform: translate(0, 0);
+    }
+    90% {
+        transform: scaleX(1.2) translate(-24px, 0);
+    }
+    100% {
+        transform: translate(0, 0);
+    }
+}
+
+@keyframes pull-left {
+    0% {
+        transform: scale(0.5) translateX(150%);
+    }
+    50% {
+        transform: scale(1) translateX(-25%);
+    }
+    75% {
+        transform: scale(1) translateX(300%);
+    }
+    100% {
+        transform: scale(0.5) translateX(150%);
+    }
+}
+
+@keyframes pull-right {
+    0% {
+        transform: scale(0.5) translateX(-150%);
+    }
+    50% {
+        transform: scale(1) translateX(25%);
+    }
+    80% {
+        transform: scale(0.5) translateX(-150%);
+    }
+    90% {
+        transform: scale(0.5) translateX(-300%);
+    }
+    100% {
+        transform: scale(0.5) translateX(-150%);
+    }
 }

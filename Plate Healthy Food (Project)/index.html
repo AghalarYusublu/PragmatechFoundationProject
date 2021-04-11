@@ -14,48 +14,43 @@
 </head>
 
 <body>
+    <div class="preloader">
+        <div class="loader">
+            <div class="ball"></div>
+            <div class="ball"></div>
+            <div class="ball"></div>
+        </div>
+    </div>
     <header id="main-menu">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
                     <div class="navbar-menu flex">
                         <div class="navbar-logo">
-                            <a href="#" onclick="scrollPrograms(this)"> <img src="images/navbar-logo.png" alt=""></a>
+                            <a onclick="scrollPrograms(this)"> <img src="images/navbar-logo.png" alt=""></a>
                         </div>
+
                         <nav class="navbar navbar-expand-lg navbar-light">
                             <button class="navbar-toggler nav-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                                <span class="navbar-toggler-icon"></span>
+                                <span class="" role="button" style="font-size: 25px;"><i class="fa fa-bars"
+                                        aria-hidden="true" style="color:#ffff"></i></span>
                             </button>
                             <div class="collapse navbar-collapse" id="navbarNav">
                                 <ul class="navbar-nav">
                                     <li class="nav-item">
-                                        <a class="menu-link flex" href="#" id="programs" onclick="scrollPrograms(this)">Proqramlar </a>
+                                        <a class="menu-link flex" id="programs" onclick="scrollPrograms(this)">Proqramlar </a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="menu-link flex" href="#" id="about" onclick="scrollAbout(this)">Haqqımızda</a>
+                                        <a class="menu-link flex" id="about" onclick="scrollAbout(this)">Haqqımızda</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="menu-link flex" href="#" id="clients" onclick="scrollClients(this)">Müştərilər</a>
+                                        <a class="menu-link flex" id="clients" onclick="scrollClients(this)">Müştərilər</a>
                                     </li>
 
                                 </ul>
                             </div>
                         </nav>
-                        <!-- 
-                        <div class="menu">
-                            <ul class="navbar-nav" style=" flex-direction:unset">
-                                <li class="nav-item">
-                                    <a class="menu-nav-link flex" href="#">Programs </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="menu-nav-link flex" href="#">About</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="menu-nav-link flex" href="#">Clients</a>
-                                </li>
 
-                            </ul>
-                        </div> -->
 
                         <button class="btn-navbar-aside-open-toggle"><i class=" open-icon fas fa-pencil-alt"></i><i
                                 class=" close-icon fas fa-times"></i></button>
@@ -98,6 +93,7 @@
                 </div>
             </div>
         </div>
+        <!--   <button class="btn btn-primary btn-slide">click</button> -->
     </header>
 
     <section id="section-banner">
@@ -105,33 +101,101 @@
         <div class="decorative-banner-div">
             <div class="decorative-circle"> </div>
         </div>
-        <div class="container">
-            <div class="row" style="align-items: center;">
-                <div class="col-lg-5" style="margin-top: 160px;">
-                    <h3 class="subtitle">Xoş GƏLMİSİNİZ</h3>
-                    <h1> <span class="point">#1</span> Çatdırılma XİDMƏTİ</h1>
-                    <p class="txt">Plate ölkənin hər yerinə üzvi və sağlam qidanın sürətli çatdırılmasını təklif edir.
-                    </p>
+        <div class="banner-slider">
+            <div class="banner-slide active">
+                <div class="container">
+                    <div class="row" style="align-items: center;">
+                        <div class="col-lg-5 mobile-mg-t" style="margin-top: 160px;">
+                            <h3 class="subtitle">Xoş GƏLMİSİNİZ</h3>
+                            <h1> <span class="point">#1</span> Çatdırılma XİDMƏTİ </h1>
+                            <p class="txt">Plate ölkənin hər yerinə üzvi və sağlam qidanın sürətli çatdırılmasını təklif edir.
+                            </p>
 
-                    <div class="pagination">
-                        <span class="page-num-1">01</span>
-                        <span class="page-num page-num-disable">02</span>
-                        <span class="page-num page-num-disable">03</span>
-                        <span class="page-num page-num-disable">04</span>
+                            <div class="pagination">
+                                <span class="page-num-1">01</span>
+                                <span class="page-num page-num-disable">02</span>
+                                <span class="page-num page-num-disable">03</span>
+                                <span class="page-num page-num-disable">04</span>
+                            </div>
+                            <p class="postitle">Niyə Plate seçməlisiniz</p>
+                        </div>
+                        <div class="box-round-wrap">
+                            <img src="images/slider-01-671x671.png" alt="" width="671" height="335">
+                        </div>
                     </div>
-                    <p class="postitle">Niyə Plate seçməlisiniz</p>
                 </div>
-                <!--   <div class="box-ban"> -->
+            </div>
 
+            <div class="banner-slide">
+                <div class="container">
+                    <div class="row" style="align-items: center;">
+                        <div class="col-lg-5 mobile-mg-t" style="margin-top: 160px;">
+                            <h3 class="subtitle">ÖLKƏ DAXİLİ ÇATDIRILMA</h3>
+                            <h1> <span class="point">200</span> DƏSTƏKLƏNƏN YERLƏR</h1>
+                            <p class="txt">Rahatlığınız üçün qida çatdırılma xidmətimiz 200-dən çox şəhərdə mövcuddur.
+                            </p>
 
-                <div class="box-round-wrap"><img src="images/slider-01-671x671.png" alt="" width="671" height="335">
-                    <!--    </div> -->
+                            <div class="pagination">
+                                <span class="page-num-1">01</span>
+                                <span class="page-num page-num-disable">02</span>
+                                <span class="page-num page-num-disable">03</span>
+                                <span class="page-num page-num-disable">04</span>
+                            </div>
+                            <p class="postitle">Ümummilli Çatdırılma</p>
+                        </div>
+                        <div class="box-round-wrap">
+                            <img src="images/slider-02-671x671.png" alt="" width="671" height="335">
+                        </div>
+                    </div>
                 </div>
+            </div>
+            <div class="banner-slide">
+                <div class="container">
+                    <div class="row" style="align-items: center;">
+                        <div class="col-lg-5 mobile-mg-t" style="margin-top: 160px;">
+                            <h3 class="subtitle">Ən yaxşı yeməklər və tərkİb</h3>
+                            <h1> <span class="point">100%</span> DADLI <br> QİDA</h1>
+                            <p class="txt">Plate mütəmadi olaraq menyularımızı yeniləyir ki, müştərilərimiz ən yaxşı və ən dadlı qidaları yesin.
+                            </p>
 
+                            <div class="pagination">
+                                <span class="page-num-1">01</span>
+                                <span class="page-num page-num-disable">02</span>
+                                <span class="page-num page-num-disable">03</span>
+                                <span class="page-num page-num-disable">04</span>
+                            </div>
+                            <p class="postitle">TƏBİİ TƏRKİB</p>
+                        </div>
+                        <div class="box-round-wrap">
+                            <img src="images/slider-03-671x671.png" alt="" width="671" height="335">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="banner-slide">
+                <div class="container">
+                    <div class="row" style="align-items: center;">
+                        <div class="col-lg-5 mobile-mg-t" style="margin-top: 160px;">
+                            <h3 class="subtitle">MÜŞTƏRİLƏRİMİZ BİZƏ GÜVƏNİR</h3>
+                            <h1> <span class="point">3 K</span> Pozİtİv İcmallar</h1>
+                            <p class="txt">Müştərilərimizin rəyləri qida çatdırılma xidmətimiz haqqında daha çox məlumat əldə etmək üçün ən yaxşı yoldur.
+                            </p>
+
+                            <div class="pagination">
+                                <span class="page-num-1">01</span>
+                                <span class="page-num page-num-disable">02</span>
+                                <span class="page-num page-num-disable">03</span>
+                                <span class="page-num page-num-disable">04</span>
+                            </div>
+                            <p class="postitle">Rəylər</p>
+                        </div>
+                        <div class="box-round-wrap">
+                            <img src="images/slider-04-671x671.png" alt="" width="671" height="335">
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-
-
     </section>
     <section id="section-about">
         <div class="container">
@@ -354,17 +418,33 @@
                             <div class="testemonials-img"><img src="images/quote-37x29.png" alt="" width="37" height="14">
                             </div>
                             <div class="testemonials-words">
-                                <p>Balanslı menyunuz üçün çox sağ olun, bu mənim üçün çox böyük kömək oldu və sizdən yediyim yeməyin immunitet sistemimi artırmağa kömək etdiyini hiss edirəm.</p>
-                                <h3 class="client-name">peter lee</h3>
+                                <div class="testemonials-owl">
+                                    <div class="testemonials-slides d-flex">
+                                        <div class="slide" id="slide-1">
+                                            <p>Bir çox yemək çatdırılma xidmətini sınamışam, amma boşqab bu dünyadan kənar bir şeydir! Yeməkləri həqiqətən sağlamdır və dadlıdır, buna görə bu şirkəti bütün dostlara tövsiyə edirəm!</p>
+                                            <h3 class="client-name">SOPHIE SMITH</h3>
+                                        </div>
+                                        <div class="slide" id="slide-2">
+                                            <p>Həm yeməklər, həm də müştəri xidmətiniz hər cəhətdən əladır və yalnız şirkətinizdən nə qədər xoşbəxt olduğumu bildirmək istədim. Sizə ən yaxşısını diləyirəm!</p>
+                                            <h3 class="client-name">Ann peters</h3>
+                                        </div>
+                                        <div class="slide" id="slide-3">
+                                            <p>Balanslı menyunuz üçün çox sağ olun, bu mənim üçün çox böyük kömək oldu və sizdən yediyim yeməyin immunitet sistemimi artırmağa kömək etdiyini hiss edirəm.</p>
+                                            <h3 class="client-name">peter lee</h3>
+                                        </div>
+                                    </div>
+                                </div>
+
+
                                 <ul class="pagination-dots">
-                                    <li class="page-dot"> <a href="" style="margin-right: 13px;height: 2px;background-color: #000000;     width: 43px;"><span></span></a>
+                                    <li class="page-dot"> <a class="owl-dot active" id="dot1" onclick="pageSlide(this)"><span></span></a>
                                     </li>
-                                    <li class="page-dot"> <a href="" style=" margin-left: 13px;margin-right: 13px;"><span></span></a> </li>
-                                    <li class="page-dot"> <a href="" style=" margin-left: 13px;margin-right: 13px;"><span></span></a> </li>
+                                    <li class="page-dot"> <a class="owl-dot" id="dot2" onclick="pageSlide(this)"><span></span></a> </li>
+                                    <li class="page-dot"> <a class="owl-dot" id="dot3" onclick="pageSlide(this)"><span></span></a> </li>
                                 </ul>
                             </div>
-                            <a class="button button-primary testemonials-btn" href="#">RƏYİNİZİ GÖNDƏRİN</a>
                         </div>
+                        <a class="button button-primary testemonials-btn" href="#">RƏYİNİZİ GÖNDƏRİN</a>
                     </div>
                 </div>
             </div>
@@ -436,7 +516,9 @@
             </div>
         </div>
     </footer>
-
+    <a class="scroll-top" onclick="scrollPrograms(this)">
+        <i class="fas fa-chevron-up"></i>
+    </a>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
     </script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
