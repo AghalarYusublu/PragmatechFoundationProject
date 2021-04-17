@@ -24,11 +24,9 @@ document.addEventListener("scroll", function() {
 })
 
 
-scrollTop.addEventListener("click", function() {
-    function scrollPrograms() {
-        document.documentElement.scrollTo(0, 0)
-    }
-})
+
+
+
 
 ////////////////////////////////////
 
@@ -182,4 +180,16 @@ function changeSlide() {
           circle.style.left = "759.5px"
           circle.style.top = "425px"
           circle.style.zIndex = "99999" */
+}
+
+
+//////////Menu PDF////////
+let btnOrder = document.querySelectorAll(".btn-order")
+
+for (let b = 0; b < btnOrder.length; b++) {
+    btnOrder[b].addEventListener("click", function(e) {
+        e.preventDefault()
+        orderDiv.classList.toggle("active")
+        btnOrderDiv.classList.toggle("active")
+    })
 }
