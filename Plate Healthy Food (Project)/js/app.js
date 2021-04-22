@@ -183,7 +183,7 @@ function changeSlide() {
 }
 
 
-//////////Menu PDF////////
+//////////BTN ORDER NOW////////
 let btnOrder = document.querySelectorAll(".btn-order")
 
 for (let b = 0; b < btnOrder.length; b++) {
