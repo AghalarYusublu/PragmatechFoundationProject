@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>{{title}}</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h1 class="my-3">Welcome to my page</h1>
+                <form action="/" method="POST">
+                    <div class="form-group">
+                        <label for="exampleFormControlInput1">Adınız</label>
+                        <input type="text" class="form-control my-3" name="ad" id="exampleFormControlInput1" placeholder="Adınızı yazın..">
+                        <label for="exampleFormControlInput1">Soyadınız</label>
+                        <input type="text" class="form-control my-3" name="soyad" id="" placeholder="Soyadınızı yazın..">
+                        <label for="exampleFormControlInput1">Email address</label>
+                        <input type="email" class="form-control my-3" name="email" id="" placeholder="E-mail">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleFormControlSelect1">Yaşadığınız şəhəri seçin</label>
+                        <select class="form-control" id="exampleFormControlSelect1" name="city_select">
+                            {% for city in cities %}
+                            <option> {{city}}</option>                        
+                            {% endfor %}
+
+                        </select>
+                    </div>
+                    <input type="submit" class="btn btn-primary my-2" value="Əlavə et">
+                </form>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <table class="table table-dark">
+                    <thead>
+                        <tr>
+                            <th scope="col">Id</th>
+                            <th scope="col">Ad</th>
+                            <th scope="col">Soyad</th>
+                            <th scope="col">E-mail</th>
+                            <th scope="col">Şəhər</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for mylist in common_list %}
+                        <tr>
+                            <th scope="row">{{mylist['id']}}</th>
+                            <td>{{mylist['name']}}</td>
+                            <td>{{mylist['surname']}}</td>
+                            <td>{{mylist['email']}}</td>
+                            <td>{{mylist['city']}}</td>
+                            <td> <a href="/delete/{{mylist['id']}}" class="btn btn-danger">Delete</a></td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+</body>
+
+</html>
