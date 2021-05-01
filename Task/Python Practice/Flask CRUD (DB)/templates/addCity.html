@@ -1,0 +1,7 @@
+<!doctype html>{% extends "layout.html" %} {% block content %}
+<h1 class="my-3">Şəhər əlavə edin</h1>
+<form action="/addCity" method="POST">
+    <input type="text" class="form-control my-2" name="add_city" placeholder="Şəhər adı yazın">
+    <input type="submit" class="btn btn-outline-primary my-2" value="Əlavə et">
+</form>
+{% endblock %}

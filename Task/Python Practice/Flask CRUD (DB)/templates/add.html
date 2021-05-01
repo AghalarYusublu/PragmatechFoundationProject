@@ -1,0 +1,21 @@
+{% extends "layout.html" %} {% block content %}
+<h3 class="my-2">İşçinin məlumatlarını daxil edin</h3>
+
+<form action="/add" method="POST">
+    <div class="form-group">
+        <input type="text" name="f_name" class="form-control my-3" placeholder="Adınızı yazın " aria-describedby="helpId">
+        <input type="text" name="l_name" class="form-control my-3" placeholder=" Soyadınızı yazın" aria-describedby="helpId">
+        <input type="text" name="age" class="form-control my-3" placeholder=" Yaşınızı yazın" aria-describedby="helpId">
+        <input type="email" name="email" class="form-control my-3" placeholder=" E-mail ünvanınızı yazın" aria-describedby="helpId">
+        <label>Yaşayış yerinizi seçin</label>
+        <select class="form-control" id="exampleFormControlSelect1" name="city_select">        
+            <option>Baki</option>   
+            <option>Sumqayit</option>             
+            <option>Gence</option>                               
+        </select>
+        <button type="submit" class="btn btn-outline-primary my-3">Əlavə et</button>
+
+    </div>
+</form>
+
+{% endblock %}
