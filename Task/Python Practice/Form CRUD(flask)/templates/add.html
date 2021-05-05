@@ -58,15 +58,18 @@
                     <div class="form-group col-md-4">
                         <label for="inputCity">Country</label>
                         <select id="inputState" name="country" class="form-control">
-                            <option>Azerbaijan</option>
-                            <option>Turkey</option>
+                            {% for country in countries %}
+                            <option value="{{country.id}}">{{country.country_name}}</option>
+                            {% endfor %}
                         </select>
                     </div>
                     <div class="form-group col-md-3">
                         <label for="inputState">State</label>
                         <select id="inputState1" name="state" class="form-control">
-                            <option>Baku</option>
-                            <option>Istanbul</option>
+                            {% for state in states %}
+                            <option value="{{state.id}}">{{state.state_name}}</option>
+
+                            {% endfor %}
                         </select>
                     </div>
                     <div class="form-group col-md-2">
@@ -122,17 +125,17 @@
                     </div>
                     <div class="col-md-3 mb-3">
                         <label>Credit card number</label>
-                        <input type="text" name="card_num" class="form-control" placeholder=" ">
+                        <input type="text" name="card_num" class="form-control" placeholder="0000  0000  0000  0000">
                     </div>
                 </div>
                 <div class="form-row mt3">
                     <div class="col-md-3 mb-3">
                         <label>Expiration</label>
-                        <input type="text" name="expiration" class="form-control" placeholder=" ">
+                        <input type="text" name="expiration" class="form-control" placeholder="00/00">
                     </div>
                     <div class="col-md-3 mb-3">
                         <label>CVV</label>
-                        <input type="text" name="cvv" class="form-control" placeholder=" ">
+                        <input type="text" name="cvv" class="form-control" placeholder="000">
                     </div>
                 </div>
 
