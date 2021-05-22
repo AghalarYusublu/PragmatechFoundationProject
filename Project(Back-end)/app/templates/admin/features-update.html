@@ -1,0 +1,31 @@
+{% extends "admin/base.html" %} {% block navbar %}
+<div class="navbar-wrapper">
+    <a class="navbar-brand" href="javascript:void(0)">Features Update</a>
+</div>
+{% endblock %} {% block content %}
+
+
+<form action="{{url_for('admin_feature_update',id=feature.id)}}" method="POST" enctype="multipart/form-data">
+    <div class="row justify-content-center">
+        <div class="col-lg-6">
+            <div class="form-group form-group bmd-form-group is-filled">
+                {{form.f_icon( class="form-control my-3",placeholder="Icon",value=feature.f_icon)}}
+                <!-- <input type="text" class="form-control my-3" placeholder="Icon" name="f_icon" value="{{feature.f_icon}}"> -->
+            </div>
+            <div class="form-group form-group bmd-form-group is-filled">
+                {{form.f_title( class="form-control my-3", placeholder="Title",value=feature.f_title)}}
+            </div>
+            <div class="form-group form-group bmd-form-group is-filled">
+                {{form.f_text( class="form-control my-3", placeholder="Text",value=feature.f_text)}}
+            </div>
+            {{form.f_text(class="btn btn-primary mt-3" ,value="Add")}}
+
+
+
+
+        </div>
+    </div>
+</form>
+
+
+{% endblock %}

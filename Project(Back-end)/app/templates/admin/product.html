@@ -1,0 +1,39 @@
+{% extends "admin/base.html" %} {% block navbar %}
+<div class="navbar-wrapper">
+    <a class="navbar-brand" href="javascript:void(0)">Product</a>
+</div>
+{% endblock %} {% block content %}
+
+
+<form action="{{url_for('admin_product')}}" method="POST" enctype="multipart/form-data">
+    <div class="row justify-content-center">
+        <div class="col-lg-6">
+            <div class="form-group bmd-form-group is-filled ">
+                <select name="p_name" class="form-control my-3">
+                    {% for item in packages %}
+                    <option value="{{item.package}}" >{{item.package}}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="form-group bmd-form-group is-filled ">
+                {{form.p_price(class="form-control my-3",placeholder="Price")}}
+
+            </div>
+            <div class="form-group bmd-form-group is-filled ">
+                {{form.p_txt(class="form-control my-3",placeholder="Text")}}
+            </div>
+            <div class="form-group bmd-form-group is-filled ">
+                {{form.p_menu_pdf_url(class="form-control my-3",placeholder="Product pdf menu")}}
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlFile1">Product Image</label> {{form.product_img(class="form-control-file" ,id="exampleFormControlFile1")}}
+            </div>
+            {{form.submit(class="form-control my-3",class="btn btn-primary mt-3" ,value="Add")}}
+
+
+        </div>
+    </div>
+</form>
+
+
+{% endblock %}

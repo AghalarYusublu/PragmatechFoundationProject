@@ -1,0 +1,64 @@
+{% extends "admin/base.html" %} {% block navbar %}
+<div class="navbar-wrapper">
+    <a class="navbar-brand" href="javascript:void(0)">Banner Update</a>
+</div>
+{% endblock %} {% block content %}
+
+
+<form action="{{url_for('admin_banner_update',id=banner.id)}}" method="POST" enctype="multipart/form-data">
+    <div class="row justify-content-center">
+        <div class="col-lg-6">
+            <div class="form-group bmd-form-group is-filled ">
+                {{form.b_title(class="form-control my-3",placeholder="Title", value=banner.b_title)}}
+            </div>
+            <div class="form-group bmd-form-group is-filled ">
+                {{form.b_subtitle(class="form-control my-3",placeholder="Subtitle", value=banner.b_subtitle)}}
+            </div>
+            <div class="form-group bmd-form-group is-filled ">
+                {{form.b_txt(class="form-control my-3",placeholder="Text", value=banner.b_txt)}}
+            </div>
+            <div class="form-group bmd-form-group is-filled ">
+                {{form.b_postitle(class="form-control my-3",placeholder="Postitle", value=banner.b_postitle)}}
+            </div>
+            <div class="form-group">
+                {{form.b_img(class="form-control-file", value=banner.b_img)}}
+            </div>
+            {{form.submit(class="btn btn-primary mt-3",value="Add")}}
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <!-- <div class="form-group bmd-form-group is-filled ">
+                <input type="text" class="form-control my-3" placeholder="Title" name="b_title" value="{{banner.b_title}}">
+            </div>
+            <div class="form-group bmd-form-group is-filled ">
+                <input type="text" class="form-control my-3" placeholder="Subtitle" name="b_subtitle" value="{{banner.b_subtitle}}">
+            </div>
+            <div class="form-group bmd-form-group is-filled ">
+                <input type="text" class="form-control my-3" placeholder="Text" name="b_txt" value="{{banner.b_txt}}">
+            </div>
+            <div class="form-group bmd-form-group is-filled ">
+                <input type="text" class="form-control my-3" placeholder="Postitle" name="b_postitle" value="{{banner.b_postitle}}">
+            </div>
+            <div class="form-group">
+                <input type="file" class="form-control-file" id="exampleFormControlFile1" name="b_img" value="{{banner.b_img}}">
+            </div>
+            <input type="submit" class="btn btn-primary mt-3" value="Add"> -->
+
+
+        </div>
+    </div>
+</form>
+
+
+
+{% endblock %}

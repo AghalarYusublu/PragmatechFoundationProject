@@ -1,0 +1,22 @@
+{% extends "admin/base.html" %} {% block navbar %}
+<div class="navbar-wrapper">
+    <a class="navbar-brand" href="javascript:void(0)">About details</a>
+</div>
+{% endblock %} {% block content %}
+
+
+<form action="{{url_for('admin_about_details')}}" method="POST" enctype="multipart/form-data">
+    <div class="row justify-content-center">
+        <div class="col-lg-6">
+            <div class="form-group bmd-form-group is-filled">
+                {{form.about_details(class="form-control my-3" ,placeholder="Details")}} {{form.submit(class="btn btn-primary mt-3", value="Add")}}
+
+
+
+            </div>
+        </div>
+    </div>
+</form>
+
+
+{% endblock %}

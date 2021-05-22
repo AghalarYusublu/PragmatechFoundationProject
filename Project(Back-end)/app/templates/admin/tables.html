@@ -1,0 +1,586 @@
+{% extends "admin/base.html" %} {% block navbar %}
+<div class="navbar-wrapper">
+    <a class="navbar-brand" href="javascript:void(0)">Tables</a>
+</div>
+{% endblock %} {% block content %}
+<div class="content">
+    <div class="container-fluid">
+        <div class="row">
+
+            <!-- Menu Table -->
+            <div class="col-md-12 ">
+                <div class="card ">
+                    <div class="card-header card-header-primary ">
+                        <h4 class="card-title ">Menu Table</h4>
+                    </div>
+                    <div class="card-body ">
+                        <div class="table-responsive ">
+                            <table class="table ">
+                                <thead class=" text-primary ">
+                                    <th>ID</th>
+                                    <th>
+                                        Name
+                                    </th>
+
+                                    <th>
+                                        Delete/Update
+                                    </th>
+                                </thead>
+                                <tbody>
+                                    {% for menu in admin_menu %}
+                                    <tr>
+                                        <td>{{menu.id}}</td>
+                                        <td>{{menu.link_name}}</td>
+
+
+                                        <td class="text-primary ">
+                                            <a class="btn btn-white btn-link btn-sm " href="{{url_for('admin_menu_update',id=menu.id)}}" style="font-size: 17px; "><i class="bi bi-pencil-fill "></i></a>
+                                            <a class="btn btn-white btn-link btn-sm " href="{{url_for('admin_menu_delete',id=menu.id)}}" style="font-size: 17px; "><i class="bi bi-x-circle "></i></a>
+                                        </td>
+                                    </tr>
+
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Banner Table -->
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-header-primary">
+                        <h4 class="card-title ">Banner Table</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead class=" text-primary">
+                                    <th>
+                                        ID
+                                    </th>
+                                    <th>
+                                        Title
+                                    </th>
+                                    <th>
+                                        Subtitle
+                                    </th>
+                                    <th>
+                                        Text
+                                    </th>
+                                    <th>
+                                        Postitle
+                                    </th>
+                                    <th>
+                                        Image
+                                    </th>
+                                    <th>
+                                        Delete/Update
+                                    </th>
+                                </thead>
+                                <tbody>
+                                    {% for banner in admin_banner %}
+                                    <tr>
+                                        <td>
+                                            {{banner.id}}
+                                        </td>
+                                        <td>
+                                            {{banner.b_title}}
+                                        </td>
+                                        <td>
+                                            {{banner.b_subtitle}}
+                                        </td>
+                                        <td>
+                                            {{banner.b_txt}}
+                                        </td>
+                                        <td>
+                                            {{banner.b_postitle}}
+                                        </td>
+                                        <td class="text-primary">
+                                            {{banner.b_img}}
+                                        </td>
+                                        <td class="text-primary">
+                                            <a class="btn btn-white btn-link btn-sm" href="{{url_for('admin_banner_update',id=banner.id)}}" font-size: 17px;><i
+                                                    class="bi bi-pencil-fill "></i></a>
+                                            <a class="btn btn-white btn-link btn-sm " href="{{url_for('admin_banner_delete',id=banner.id)}}" style="font-size: 17px; "><i class="bi bi-x-circle "></i></a>
+                                        </td>
+                                    </tr>
+                                    {% endfor %}
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Food Package Table -->
+            <div class="col-md-12 ">
+                <div class="card ">
+                    <div class="card-header card-header-primary ">
+                        <h4 class="card-title ">Package Table</h4>
+                    </div>
+                    <div class="card-body ">
+                        <div class="table-responsive ">
+                            <table class="table ">
+                                <thead class=" text-primary ">
+                                    <th>
+                                        ID
+                                    </th>
+                                    <th>
+                                        Package
+                                    </th>
+
+                                    <th>
+                                        Delete/Update
+                                    </th>
+                                </thead>
+                                <tbody>
+                                    {% for package in admin_food_package %}
+                                    <tr>
+                                        <td>{{package.id}}</td>
+                                        <td class="text-primary ">
+                                            {{package.package}}
+                                        </td>
+
+                                        <td class="text-primary ">
+                                            <a class="btn btn-white btn-link btn-sm " href="{{url_for('admin_food_package_update',id=package.id)}}" style="font-size: 17px; "><i class="bi bi-pencil-fill "></i></a>
+                                            <a class="btn btn-white btn-link btn-sm " href="{{url_for('admin_food_package_delete',id=package.id)}}" style="font-size: 17px; "><i class="bi bi-x-circle "></i></a>
+                                        </td>
+                                    </tr>
+                                    {% endfor %}
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Orders Table -->
+            <div class="col-md-12 ">
+                <div class="card ">
+                    <div class="card-header card-header-primary ">
+                        <h4 class="card-title ">Orders Table</h4>
+                    </div>
+                    <div class="card-body ">
+                        <div class="table-responsive ">
+                            <table class="table ">
+                                <thead class=" text-primary ">
+                                    <th>
+                                        ID
+                                    </th>
+                                    <th>
+                                        Package Name
+                                    </th>
+                                    <th>
+                                        Email
+                                    </th>
+                                    <th>
+                                        Phone
+                                    </th>
+
+                                    <th>
+                                        Comment
+                                    </th>
+
+                                    <th>
+                                        Delete
+                                    </th>
+                                </thead>
+                                <tbody>
+                                    {% for order in orders %}
+                                    <tr>
+                                        <td>{{order.package_name}}</td>
+                                        <td class="text-primary ">
+                                            {{order.email}}
+                                        </td>
+                                        <td>{{order.phone}}</td>
+                                        <td class="text-primary ">{{order.comment}}</td>
+                                        <td>{{order.complete_order_btn}}</td>
+
+                                        <td class="text-primary ">
+                                            <a class="btn btn-white btn-link btn-sm " href="# " style="font-size: 17px; "><i class="bi bi-x-circle "></i></a>
+                                        </td>
+                                    </tr>
+
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- About Table -->
+            <div class="col-md-12 ">
+                <div class="card ">
+                    <div class="card-header card-header-primary ">
+                        <h4 class="card-title ">About Table</h4>
+                    </div>
+                    <div class="card-body ">
+                        <div class="table-responsive ">
+                            <table class="table ">
+                                <thead class=" text-primary ">
+                                    <th>
+                                        ID
+                                    </th>
+                                    <th>
+                                        Chef Name
+                                    </th>
+                                    <th>
+                                        Title
+                                    </th>
+                                    <th>
+                                        Text
+                                    </th>
+                                    <th>
+                                        Image
+                                    </th>
+
+                                    <th>
+                                        Delete/Update
+                                    </th>
+                                </thead>
+                                <tbody>
+                                    {% for about in admin_about %}
+                                    <tr>
+                                        <td>{{about.id}}</td>
+                                        <td>
+                                            {{about.about_chef_name}}
+                                        </td>
+                                        <td>
+                                            {{about.about_title}}
+                                        </td>
+                                        <td>{{about.about_txt}}</td>
+                                        <td class="text-primary">{{about.about_img}}</td>
+
+
+                                        <td class="text-primary ">
+                                            <a class="btn btn-white btn-link btn-sm " href="{{url_for('admin_about_update',id=about.id)}}" style="font-size: 17px; "><i class="bi bi-pencil-fill "></i></a>
+                                            <a class="btn btn-white btn-link btn-sm " href="{{url_for('admin_about_delete',id=about.id)}}" style="font-size: 17px; "><i class="bi bi-x-circle "></i></a>
+                                        </td>
+                                    </tr>
+
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- About-details Table -->
+            <div class="col-md-12 ">
+                <div class="card ">
+                    <div class="card-header card-header-primary ">
+                        <h4 class="card-title ">About-details Table</h4>
+                    </div>
+                    <div class="card-body ">
+                        <div class="table-responsive ">
+                            <table class="table ">
+                                <thead class=" text-primary ">
+                                    <th>ID</th>
+                                    <th>
+                                        Details
+                                    </th>
+
+                                    <th>
+                                        Delete/Update
+                                    </th>
+                                </thead>
+                                <tbody>
+                                    {% for about in admin_about_details %}
+                                    <tr>
+                                        <td>{{about.id}}</td>
+                                        <td>{{about.about_details}}</td>
+
+
+
+                                        <td class="text-primary ">
+                                            <a class="btn btn-white btn-link btn-sm " href="{{url_for('admin_about_details_update',id=about.id)}}" style="font-size: 17px; "><i class="bi bi-pencil-fill "></i></a>
+                                            <a class="btn btn-white btn-link btn-sm " href="{{url_for('admin_about_details_delete',id=about.id)}}" style="font-size: 17px; "><i class="bi bi-x-circle "></i></a>
+                                        </td>
+                                    </tr>
+
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--Product Table  -->
+            <div class="col-md-12 ">
+                <div class="card ">
+                    <div class="card-header card-header-primary ">
+                        <h4 class="card-title ">Product Table</h4>
+                    </div>
+                    <div class="card-body ">
+                        <div class="table-responsive ">
+                            <table class="table ">
+                                <thead class=" text-primary ">
+                                    <th>
+                                        ID
+                                    </th>
+                                    <th>
+                                        Product Name
+                                    </th>
+                                    <th>
+                                        Price
+                                    </th>
+                                    <th>
+                                        Text
+                                    </th>
+                                    <th>
+                                        Pdf Url
+                                    </th>
+                                    <th>
+                                        Image
+                                    </th>
+
+                                    <th>
+                                        Delete/Update
+                                    </th>
+                                </thead>
+                                <tbody>
+                                    {% for product in admin_product %}
+                                    <tr>
+                                        <td>{{product.id}}</td>
+                                        <td>
+                                            {{product.p_name}}
+                                        </td>
+                                        <td>{{product.p_price}}</td>
+                                        <td>{{product.p_txt}}</td>
+                                        <td>{{product.p_menu_pdf_url}}</td>
+                                        <td>{{product.product_img}}</td>
+
+                                        <td class="text-primary ">
+                                            <a class="btn btn-white btn-link btn-sm " href="{{url_for('admin_product_update',id=product.id)}} " style="font-size: 17px; "><i class="bi bi-pencil-fill "></i></a>
+                                            <a class="btn btn-white btn-link btn-sm " href="{{url_for('admin_product_delete',id=product.id)}} " style="font-size: 17px; "><i class="bi bi-x-circle "></i></a>
+                                        </td>
+                                    </tr>
+                                    {% endfor %}
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Testimonials Table -->
+            <div class="col-md-12 ">
+                <div class="card ">
+                    <div class="card-header card-header-primary ">
+                        <h4 class="card-title ">Testimonials Table</h4>
+                    </div>
+                    <div class="card-body ">
+                        <div class="table-responsive ">
+                            <table class="table ">
+                                <thead class=" text-primary ">
+                                    <th>
+                                        ID
+                                    </th>
+                                    <th>
+                                        Client Name
+                                    </th>
+                                    <th>
+                                        Testimonial
+                                    </th>
+                                    <th>
+                                        Client image
+                                    </th>
+
+                                    <th>
+                                        Delete/Update
+                                    </th>
+                                </thead>
+                                <tbody>
+                                    {% for testimonial in admin_testimonial %}
+                                    <tr>
+                                        <td>{{testimonial.id}}</td>
+                                        <td>
+                                            {{testimonial.clinet_name}}
+                                        </td>
+                                        <td>
+                                            {{testimonial.client_testimonial}}
+                                        </td>
+                                        <td>
+                                            {{testimonial.client_img}}
+                                        </td>
+
+
+
+                                        <td class="text-primary ">
+                                            <a class="btn btn-white btn-link btn-sm " href="{{url_for('admin_testimonial_update',id=testimonial.id)}}" style="font-size: 17px; "><i class="bi bi-pencil-fill "></i></a>
+                                            <a class="btn btn-white btn-link btn-sm " href="{{url_for('admin_testimonial_delete',id=testimonial.id)}}" style="font-size: 17px; "><i class="bi bi-x-circle "></i></a>
+                                        </td>
+                                    </tr>
+                                    {% endfor %}
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Contact Table -->
+            <div class="col-md-12 ">
+                <div class="card ">
+                    <div class="card-header card-header-primary ">
+                        <h4 class="card-title ">Contact Table</h4>
+                    </div>
+                    <div class="card-body ">
+                        <div class="table-responsive ">
+                            <table class="table ">
+                                <thead class=" text-primary ">
+                                    <th>
+                                        ID
+                                    </th>
+                                    <th>
+                                        Phone
+                                    </th>
+                                    <th>
+                                        Email
+                                    </th>
+                                    <th>
+                                        Location
+                                    </th>
+
+                                    <th>
+                                        Delete/Update
+                                    </th>
+                                </thead>
+                                <tbody>
+                                    {% for contact in admin_contact %}
+                                    <tr>
+                                        <td>{{contact.id}}</td>
+                                        <td>
+                                            {{contact.contact_phone}}
+                                        </td>
+                                        <td>
+                                            {{contact.contact_email}}
+                                        </td>
+                                        <td>
+                                            {{contact.contact_location}}
+                                        </td>
+
+
+
+                                        <td class="text-primary ">
+                                            <a class="btn btn-white btn-link btn-sm " href="{{url_for('admin_contact_update',id=contact.id)}}" style="font-size: 17px; "><i class="bi bi-pencil-fill "></i></a>
+                                            <a class="btn btn-white btn-link btn-sm " href="{{url_for('admin_contact_delete',id=contact.id)}}" style="font-size: 17px; "><i class="bi bi-x-circle "></i></a>
+                                        </td>
+                                    </tr>
+                                    {% endfor %}
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Social-Links Table -->
+            <div class="col-md-12 ">
+                <div class="card ">
+                    <div class="card-header card-header-primary ">
+                        <h4 class="card-title ">Social-Links Table</h4>
+                    </div>
+                    <div class="card-body ">
+                        <div class="table-responsive ">
+                            <table class="table ">
+                                <thead class=" text-primary ">
+                                    <th>
+                                        ID
+                                    </th>
+                                    <th>
+                                        Icon
+                                    </th>
+                                    <th>
+                                        Icon Url
+                                    </th>
+                                    <th>
+                                        Delete/Update
+                                    </th>
+                                </thead>
+                                <tbody>
+                                    {% for link in admin_social_link %}
+                                    <tr>
+                                        <td>{{link.id}}</td>
+                                        <td class=" text-primary ">
+                                            {{link.s_icon}}
+                                        </td>
+                                        <td>
+                                            {{link.s_icon_url}}
+                                        </td>
+
+
+                                        <td class="text-primary ">
+                                            <a class="btn btn-white btn-link btn-sm " href="{{url_for('admin_social_link_update',id=link.id)}}" style="font-size: 17px; "><i class="bi bi-pencil-fill "></i></a>
+                                            <a class="btn btn-white btn-link btn-sm " href="{{url_for('admin_social_link_delete',id=link.id)}}" style="font-size: 17px; "><i class="bi bi-x-circle "></i></a>
+                                        </td>
+                                    </tr>
+                                    {% endfor %}
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Features Table -->
+            <div class="col-md-12 ">
+                <div class="card ">
+                    <div class="card-header card-header-primary ">
+                        <h4 class="card-title ">Features Table</h4>
+                    </div>
+                    <div class="card-body ">
+                        <div class="table-responsive ">
+                            <table class="table ">
+                                <thead class=" text-primary ">
+                                    <th>
+                                        ID
+                                    </th>
+                                    <th>
+                                        Icon
+                                    </th>
+                                    <th>
+                                        Title
+                                    </th>
+                                    <th>
+                                        Text
+                                    </th>
+                                    <th>
+                                        Delete/Update
+                                    </th>
+                                </thead>
+                                <tbody>
+                                    {% for feature in admin_feature %}
+                                    <tr>
+                                        <td>{{feature.id}}</td>
+                                        <td class=" text-primary ">
+                                            {{feature.f_icon}}
+                                        </td>
+                                        <td>
+                                            {{feature.f_title}}
+                                        </td>
+                                        <td>
+                                            {{feature.f_text}}
+                                        </td>
+
+
+
+                                        <td class="text-primary ">
+                                            <a class="btn btn-white btn-link btn-sm " href="{{url_for('admin_feature_update',id=feature.id)}}" style="font-size: 17px; "><i class="bi bi-pencil-fill "></i></a>
+                                            <a class="btn btn-white btn-link btn-sm " href="{{url_for('admin_feature_delete',id=feature.id)}}" style="font-size: 17px; "><i class="bi bi-x-circle "></i></a>
+                                        </td>
+                                    </tr>
+                                    {% endfor %}
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

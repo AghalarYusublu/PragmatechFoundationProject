@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;1,100;1,200;1,300;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="static/main/css/style.css">
+    <title>Plate Healthy Food</title>
+</head>
+
+<body>
+    <div class="preloader">
+        <div class="loader">
+            <div class="ball"></div>
+            <div class="ball"></div>
+            <div class="ball"></div>
+        </div>
+    </div>
+    <header id="main-menu">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="navbar-menu flex">
+                        <div class="navbar-logo">
+                            <a onclick="scrollPrograms(this)"> <img src="static/main/images/navbar-logo.png" alt=""></a>
+                        </div>
+
+                        <nav class="navbar navbar-expand-lg navbar-light">
+                            <button class="navbar-toggler nav-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="" role="button" style="font-size: 25px;"><i class="fa fa-bars"
+                                        aria-hidden="true" style="color:#ffff"></i></span>
+                            </button>
+                            <div class="collapse navbar-collapse" id="navbarNav">
+                                <ul class="navbar-nav">
+                                    {% for item in menu %}
+                                    <li class="nav-item">
+                                        <a class="menu-link flex" id="programs" onclick="scrollPrograms(this)">{{item.link_name}} </a>
+                                    </li>
+                                    {% endfor %}
+                                    <!-- <li class="nav-item">
+                                        <a class="menu-link flex" id="programs" onclick="scrollPrograms(this)">Proqramlar </a>
+                                    </li> -->
+                                    <li class="nav-item">
+                                        <a class="menu-link flex" id="about" onclick="scrollAbout(this)">Haqqımızda</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="menu-link flex" id="clients" onclick="scrollClients(this)">Müştərilər</a>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </nav>
+
+
+                        <button class="btn-navbar-aside-open-toggle"><i class=" open-icon fas fa-pencil-alt"></i><i
+                                class=" close-icon fas fa-times"></i></button>
+                        <div class="navbar-orderDiv">
+                            <h3>SİFARİŞİNİZİ TAMAMLAYIN</h3>
+                            <form class="mailform">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <form action="{{url_for('orders')}}" method="POST">
+                                            <div class="form-group">
+                                                <select class="form-control manual-size" id="exampleFormControlSelect1" name="package_name">
+                                                    <option value="" disabled selected hidden>Yemək paketi seçin
+                                                    </option>
+                                                    {% for item in package %}
+                                                    <option>{{item.package}}</option>
+                                                    {% endfor %}
+
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="email" class="form-control manual-size" name="email" id="exampleFormControlInput1" placeholder="E-mail" onfocus="this.placeholder=''" onblur="this.placeholder='E-mail'" />
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="text" class="form-control manual-size" name="phone" placeholder="Telefon" onfocus="this.placeholder=''" onblur="this.placeholder='Telefon'">
+                                            </div>
+                                            <div class="form-group">
+
+                                                <textarea class="form-control" name="comment" id="exampleFormControlTextarea1" style="height: 230px" placeholder="Şərh" rows="3" onfocus="this.placeholder=''" onblur="this.placeholder='Şərh'"></textarea>
+                                            </div>
+                                            <div class="form-group">
+                                                <input class="button button-primary" style="border:none" type="submit" name="complete_order_btn" value="SİFARİŞİ TAMAMLA">
+                                            </div>
+                                        </form>
+                                    </div>
+
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--   <button class="btn btn-primary btn-slide">click</button> -->
+    </header>
+
+    <section id="section-banner">
+        <div class="banner-bg-text"> <span>Food</span> </div>
+        <div class="decorative-banner-div">
+            <div class="decorative-circle"> </div>
+        </div>
+        <div class="banner-slider">
+            {% for item in banner %}
+            <div class="banner-slide active">
+                <div class="container">
+                    <div class="row" style="align-items: center;">
+                        <div class="col-lg-5 mobile-mg-t" style="margin-top: 160px;">
+                            <h3 class="title">{{item.b_title}}</h3>
+                            <h1> <span class="point">#1</span> {{item.b_subtitle}} </h1>
+                            <p class="txt">{{item.b_txt}}
+                            </p>
+
+                            <div class="pagination">
+                                <span class="page-num-1">01</span>
+                                <span class="page-num page-num-disable">02</span>
+                                <span class="page-num page-num-disable">03</span>
+                                <span class="page-num page-num-disable">04</span>
+                            </div>
+                            <p class="postitle">{{item.b_postitle}}</p>
+                        </div>
+                        <div class="box-round-wrap">
+                            <img src="static/uploads/{{item.b_img}}" alt="" width="671" height="335">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+    <section id="section-about">
+        <div class="container">
+            <div class="row">
+                {% for item in about %}
+                <div class="col-lg-6">
+                    <div class="chef-box">
+                        <img src="static/uploads/{{item.about_img}}" alt="">
+                        <div class="chef-info-box">
+                            <p class="chef-name-box">{{item.about_chef_name}}</p>
+                            <p class="chef-position-box">Head Chef</p>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="about-us-box">
+                        <h3>BİZİM HAQQIMIZDA</h3>
+                        <h2>{{item.about_title}}</h2>
+                        <p>{{item.about_txt}}</p>
+                        <ul class="list-marked">
+                            {% for item in about_details %}
+                            <li> <span></span>{{item.about_details}}</li>
+                            {% endfor %}
+                            <!-- <li><span></span> Hər yemək üçün ən təzə inqrediyenlərt</li>
+                            <li><span></span> 2 + nəfərlik sifariş edərkən böyük endirimlər əldə edin</li> -->
+                        </ul>
+                        <a class="button button-primary" href="#">daha çox oxu </a>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <section id="product">
+        <div class="container">
+            <div class="text-center">
+                <h3>NƏ TƏKLİF EDİRİK</h3>
+                <h2>QİDA PAKETLƏRİ</h2>
+            </div>
+            <div class="row row-mb-50 justify-content-center" style="margin-top: 75px;">
+                {% for item in product %}
+                <div class="col-lg-4 col-md-6">
+                    <div class="product">
+                        <h3>{{item.p_name}}</h3>
+                        <img src="static/uploads/{{item.product_img}}" alt="">
+                        <div class="price">
+                            <div class="price-header flex">
+                                <div class="price-currency"><span>₼</span></div>
+                                <div class="price-value">
+                                    <span> {{item.p_price}}</span>
+                                </div>
+                            </div>
+                            <div class="price-footer">
+                                <span>HƏR GÜN</span>
+                            </div>
+                        </div>
+                        <p class="product-text">{{item.p_txt}}</p>
+                        <a class="button button-primary btn-order">İNDİ SİFARİŞ VER</a>
+                        <div><a class="link-border" target="_blank" href="{{item.p_menu_pdf_url}}">menyunu aç (pdf)</a></div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <section id="section-how-it-works">
+        <div class="container">
+            <div class="text-center">
+                <h3>BU NECƏ İŞLƏYİR</h3>
+                <h2>SAĞLAM YEMƏK ÜÇÜN 3 ADDIM</h2>
+            </div>
+            <div class="row post-classic-after row-mb-50 justify-content-center">
+                <div class="col-lg-4 col-sm-6">
+                    <div class="post-classic  bg-1">
+                        <span>01</span>
+                        <h3 class="post-classic-title">YEMƏK PAKETİ <br> SEÇİN</h3>
+                        <p class="post-classic-text">Əvvəlcə ən çox seçim etdiyiniz paketi seçin.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                    <div class="post-classic bg-2">
+                        <span>02</span>
+                        <h3 class="post-classic-title">MENyunuzu XÜSUSİLƏŞTİRİN</h3>
+                        <p class="post-classic-text">Bundan sonra menyunuzu dəyişdirmək və fərdiləşdirməkdən çəkinməyin.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                    <div class="post-classic bg-3">
+                        <span>03</span>
+                        <h3 class="post-classic-title">Çatdırılma seçİn Ünvan VƏ vaxt</h3>
+                        <p class="post-classic-text">Sonda yeməyinizi harada və nə vaxt çatdıracağımızı bizə bildirin.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="section-features">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-7">
+                    <div class="row row-mb-40">
+                        {% for item in features %}
+                        <div class="col-lg-6 col-md-6">
+                            <div class="box-icon">
+                                <div class="box-icon-header flex">
+                                    <span class="box-icon-feature"><i class="{{item.f_icon}}"></i></span>
+                                    <h3 class="box-icon-title">{{item.f_title}}</h3>
+                                </div>
+                                <p class="box-icon-text">{{item.f_text}}</p>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="box-custom-posotion flex">
+            <div class="box-custom-posotion-img " style="top: 12px;left: 12px;"><img src="static/main/images/home-01-382x375.png" alt="" width="382" height="187">
+            </div>
+            <div class="box-custom-posotion-img" style="top: 0;right: 0;"><img src="static/main/images/home-02-293x293.png" alt="" width="293" height="146">
+            </div>
+            <div class="box-custom-posotion-img" style="left: 87px;bottom: 36px;"><img src="static/main/images/home-03-461x407.png" alt="" width="461" height="203">
+            </div>
+            <div class="box-custom-posotion-img" style="right: -13px;bottom: 186px;"><img src="static/main/images/home-04-191x191.png" alt="" width="191" height="95">
+            </div>
+        </div>
+    </section>
+
+    <section id="section-what-our-clients-say">
+        <div class="container">
+            <div class="row row-mb-40">
+                <div class="col-lg-6">
+                    <div class="clients-photos">
+                        {% for item in testimonials %}
+                        <div class="client-img">
+                            <img src="static/uploads/{{item.client_img}}" alt="" width="179" height="89">
+                        </div>
+                        {% endfor %}
+
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="testemonials">
+                        <h3>MÜŞTƏRİLƏRİMİZ NƏ DEYİR</h3>
+                        <h2>ŞƏRHLƏR</h2>
+                        <div class="testemonials-text">
+                            <div class="testemonials-img"><img src="static/main/images/quote-37x29.png" alt="" width="37" height="14">
+                            </div>
+                            <div class="testemonials-words">
+                                <div class="testemonials-owl">
+                                    <div class="testemonials-slides d-flex">
+                                        {% for item in testimonials %}
+                                        <div class="slide" id="slide-2">
+                                            <p>{{item.client_testimonial}}</p>
+                                            <h3 class="client-name">{{item.clinet_name}}</h3>
+                                        </div>
+                                        {% endfor %}
+
+                                    </div>
+                                </div>
+
+
+                                <ul class="pagination-dots">
+                                    <li class="page-dot"> <a class="owl-dot active" id="dot1" onclick="pageSlide(this)"><span></span></a>
+                                    </li>
+                                    <li class="page-dot"> <a class="owl-dot" id="dot2" onclick="pageSlide(this)"><span></span></a> </li>
+                                    <li class="page-dot"> <a class="owl-dot" id="dot3" onclick="pageSlide(this)"><span></span></a> </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <a class="button button-primary testemonials-btn" href="#">RƏYİNİZİ GÖNDƏRİN</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="section-footer">
+        <div class="container">
+            <div class="row row-mb-50">
+                <div class="col-lg-4 col-md-6">
+                    <a href=""> <img class="" src="static/main/images/footer-logo.png" alt="" width="134" height="50"></a>
+                    <p class="rights">© 2021 Plate. Bütün hüquqlar qorunur</p>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <h3 class="footer-title">
+                        ƏLAQƏ
+                    </h3>
+                    <ul class="footer-list">
+                        {% for item in contact %}
+                        <li>
+                            <ul>
+                                <li class="footer-contact"> <span>Tel. </span>
+                                    <a target="_blank" href="">{{item.contact_phone}}</a></li>
+                                <li class="footer-contact">
+                                    <span>Mail. </span>
+                                    <a target="_blank" href="">{{item.contact_email}}</a>
+                                </li>
+                            </ul>
+
+                        </li>
+                        <li class="footer-contact" style=" margin-top: 20px;"><a href="">{{item.contact_location}}</a>
+                        </li>
+                        {% endfor %}
+                        <li style="margin-top: 20px;">
+                            <ul class="social-icons">
+                                {% for item in social_link %}
+                                <li>
+                                    <a target="_blank" style="color: #4d70a8;" href="{{item.s_icon_url}}"><i
+                                            class="{{item.s_icon}}"></i></a>
+
+                                </li>
+                                {% endfor %}
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <h3 class="footer-title">
+                        BÖLMƏLƏR
+                    </h3>
+                    <ul class="footer-list">
+                        <li><a href="">Proqramlar</a></li>
+                        <li><a href="">Haqqımızda</a></li>
+                        <li><a href="">Müştərilər</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <h3 class="footer-title">
+                        QİDA PAKETLƏRİ
+                    </h3>
+                    <ul class="footer-list">
+                        {% for item in package %}
+                        <li><a href="#">{{item.package}}</a></li>
+
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <a class="scroll-top" onclick="scrollPrograms(this)">
+        <i class="fas fa-chevron-up"></i>
+    </a>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+    </script>
+    <script src="static/main/js/app.js"></script>
+</body>
+
+</html>
