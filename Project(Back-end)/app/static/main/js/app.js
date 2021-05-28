@@ -37,11 +37,11 @@ let btnAbout = document.querySelector("#about")
 
 function scrollPrograms() {
     document.documentElement.scrollTo(0, 0)
+
 }
 
 function scrollAbout() {
     document.documentElement.scrollTo(0, 847)
-
 }
 
 function scrollClients() {
@@ -83,25 +83,23 @@ let width = testemonialsOwl.offsetWidth;
 
 let slideNum = document.querySelectorAll(".slide").length
 
-i = 0;
+/* i = 0; */
 
-for (let a = 0; a < owlDots.length; a++) {
+/* for (let a = 0; a < owlDots.length; a++) {
     owlDots[a].addEventListener('click', function() {
         if (i != -((slideNum - 1) * width)) {
             i -= width;
             testemonialsSlides.style.transform = `translateX(${i}px)`
 
+        } else {
+            i += width;
+            testemonialsSlides.style.transform = `translateX(${i}px)`
+            console.log(i)
         }
-
-        /*     else {
-               i += width;
-               testemonialsSlides.style.transform = `translateX(${i}px)`
-               console.log(i)
-           }  */
 
 
     })
-}
+} */
 
 /* function pageSlide(element) {
     index = element.id;
@@ -135,6 +133,8 @@ let bannerSlider = document.querySelector(".banner-slider").children
 let bannerSlide = document.querySelector(".banner-slide")
 let decorativeCircle = document.querySelector(".decorative-circle")
 let btnSlide = document.querySelector(".btn-slide")
+let pageNum = document.querySelector(".pagination").children
+let carouselInner = document.querySelector(".carousel-inner").children
 
 
 /* btnSlide.addEventListener("click", function() { */
@@ -157,12 +157,14 @@ let btnSlide = document.querySelector(".btn-slide")
     width: 3038px;
     height: 3038px;
  */
+
+bannerSlider[0].classList.add("active")
+carouselInner[0].classList.add("active")
 setInterval(function() {
-    if (index == bannerSlider.length - 1) {
+    if (index == bannerSlider.length - 2) {
         index = 0
     } else {
         index++
-
     }
     changeSlide();
 }, 4000)
@@ -172,7 +174,11 @@ function changeSlide() {
         bannerSlider[s].classList.remove("active")
             /*  decorativeCircle.classList.remove("active") */
     }
+    for (let p = 0; p < pageNum.length; p++) {
+        pageNum[p].classList.remove("active")
+    }
     bannerSlider[index].classList.add("active")
+    pageNum[index].classList.add("active")
         /*   decorativeCircle.classList.add("active")
 
           circle.style.width = "3038px"

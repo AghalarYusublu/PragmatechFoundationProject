@@ -18,4 +18,4 @@ from app.models import *
 from admin.routes import *
 from main.routes import *   
 
-db.create_all()
+# db.create_all()

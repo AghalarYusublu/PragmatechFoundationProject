@@ -1,11 +1,12 @@
 # admin routes
 from app import app 
-from app.models import Banner,About, Foodpackage, Menu, Orders, Product, SocialLinks,Testimonials,Contact,SocialLinks,Features,AboutDetails
+from app.models import *
 import os
-from admin.forms import AboutForm, BannerForm,FeaturesForm, FoodpackageForm,MenuForm,AboutDetailsForm,ProductForm,TestimonialsForm,ContactForm,SocialLinksForm
+from admin.forms import *
 from app import db
 from flask import render_template,redirect,request,url_for
 from werkzeug.utils import secure_filename
+import itertools 
 
 
 
@@ -26,7 +27,18 @@ def index():
     product=Product.query.all()
     about_details=AboutDetails.query.all()
     menu=Menu.query.all()
-    return render_template('main/index.html',banner=banner,about=about,features=features,contact=contact,social_link=social_link,package=package,orders=orders,testimonials=testimonials,product=product,about_details=about_details,menu=menu)
+    menuItem=["scrollPrograms(this)","scrollAbout(this)","scrollClients(this)"]
+    menuID=["programs","about","clients"]
+    newList=[]
+    for i in range(len(menuItem)):
+        newList.append({
+            'menu':menu[i],
+            'menuItem':menuItem[i],
+            'menuID':menuID[i]
+        })
+
+    
+    return render_template('main/index.html',banner=banner,about=about,features=features,contact=contact,social_link=social_link,package=package,orders=orders,testimonials=testimonials,product=product,about_details=about_details,menu=menu,menuItem=menuItem,newList=newList)
 
 @app.route("/admin/tables/")
 def admin_tables():
@@ -44,18 +56,26 @@ def admin_tables():
     return render_template('admin/tables.html',admin_banner=admin_banner, admin_about=admin_about, admin_testimonial=admin_testimonial, admin_contact=admin_contact,admin_social_link=admin_social_link,admin_feature=admin_feature,admin_food_package=admin_food_package,orders=orders,admin_product=admin_product,admin_about_details=admin_about_details,admin_menu=admin_menu)
 
 
+
 @app.route('/admin/menu/',methods=['GET','POST'])
 def admin_menu():
+    menuItem=["scrollPrograms(this)","scrollAbout(this)","scrollClients(this)"]
+    menuID=["programs","about","clients"]
     form=MenuForm()
+    i=0
+    while i<len(menuItem):
+        i+=1
+    j=0
+    while j<len(menuID):
+        j+=1
     if request.method=='POST':
-    
         menu=Menu(
             link_name=form.link_name.data
         )
         db.session.add(menu)
-        db.session.commit()
+        db.session.commit()     
         return redirect(url_for('admin_tables'))
-    return render_template('admin/menu.html',form=form)
+    return render_template('admin/menu.html',form=form,menuItem=menuItem,menuID=menuID)
 
 @app.route('/admin/menu-update/<id>',methods=['GET','POST'])
 def admin_menu_update(id):
@@ -400,17 +420,15 @@ def admin_social_link():
         db.session.add(link)
         db.session.commit()
         return redirect(url_for('admin_tables'))
-    return render_template('admin/social-links.html')
+    return render_template('admin/social-links.html',form=form)
     
 @app.route('/admin/social-links-update/<id>',methods=['GET','POST'])
 def admin_social_link_update(id):
     link=SocialLinks.query.get(id)
     form=SocialLinksForm()
-
-    if request.method=='POST':       
-        link.s_icon=form.s_icon.data,
+    if request.method=='POST': 
+        link.s_icon=form.s_icon.data
         link.s_icon_url=form.s_icon_url.data   
-
         db.session.commit()
         return redirect(url_for('admin_tables'))
     return render_template('admin/social-link-update.html',link=link,form=form)
@@ -441,9 +459,9 @@ def admin_feature_update(id):
     feature=Features.query.get(id)
     form=FeaturesForm()
     if request.method=='POST':      
-        feature.form.f_icon.data
-        feature.form.f_title.data
-        feature.form.f_text.data     
+        feature.f_icon=form.f_icon.data
+        feature.f_title=form.f_title.data
+        feature.f_text=form.f_text.data     
         db.session.commit()
         return redirect(url_for('admin_tables'))
     return render_template('admin/features-update.html',feature=feature,form=form)

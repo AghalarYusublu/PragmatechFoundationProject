@@ -1,6 +1,5 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField,SubmitField,FileField
-from wtforms.fields.simple import TextAreaField
+from wtforms import StringField,SubmitField,FileField,TextAreaField
 
 
 

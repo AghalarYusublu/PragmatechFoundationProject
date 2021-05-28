@@ -166,8 +166,8 @@ h6 {
         line-height: 1.1 !important;
     }
     #section-banner h1 .point {
-        top: 35px !important;
-        left: 5px !important;
+        top: -30px !important;
+        left: -10px !important;
     }
     .navbar-collapse {
         color: #ffffff;
@@ -258,6 +258,21 @@ h6 {
     transition: .25s;
     text-align: center;
 }
+
+
+/* .menu-link.active {
+    display: inline-block;
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    bottom: -8px;
+    opacity: 1;
+    background-color: #ffffff;
+    transition: all 0.3s;
+    margin-left: auto;
+    margin-right: auto;
+}
+ */
 
 .menu-link::before {
     content: '';
@@ -457,14 +472,16 @@ select option:hover {
     margin-top: 55px;
     font-size: 70px;
     font-weight: 900;
+    position: relative;
     line-height: 85px;
 }
 
 #section-banner h1 .point {
     position: absolute;
     text-align: center;
-    left: -10px;
     color: #000000;
+    top: -30px;
+    left: -10px;
     font-size: 20px;
     font-weight: 600;
     background-color: #ffee58;
@@ -492,10 +509,14 @@ select option:hover {
 .pagination {
     display: inline-block;
     border-bottom: 1px solid rgba(255, 255, 255, 0.5);
-    margin-top: 15%;
+    transition: .3s;
+    position: absolute;
+    height: 64px;
+    margin-top: 30px;
+    left: 15px;
 }
 
-.page-num-1 {
+.page-num.active {
     border-bottom: 2px solid #ffffff;
     font-size: 30px;
     font-weight: 600;
@@ -505,7 +526,7 @@ select option:hover {
     margin-right: 11px;
 }
 
-.page-num-disable {
+.page-num {
     font-size: 20px;
     font-weight: 600;
     display: inline-block;
@@ -618,6 +639,10 @@ select option:hover {
 @media (min-width:1200px) {
     .chef-box img {
         margin: 0 auto;
+    }
+    .pagination {
+        bottom: 184px;
+        left: calc((100vw - 1183px) / 2);
     }
 }
 
@@ -965,6 +990,9 @@ select option:hover {
         flex-direction: column;
         align-items: flex-start;
     }
+    #section-banner h1 .point {
+        top: -11px;
+    }
 }
 
 @media only screen and (min-width: 922px) {
@@ -1099,7 +1127,7 @@ select option:hover {
 .testemonials-words .client-name {
     color: #000000;
     font-weight: 700;
-    margin-top: 37px;
+    margin-top: 15px;
 }
 
 .testemonials-slides {
@@ -1108,11 +1136,21 @@ select option:hover {
     height: 245px;
 }
 
+.carousel-inner {
+    height: 250px;
+}
+
 .testemonials-slides .slide {
     width: 500px;
 }
 
-.pagination-dots .page-dot {
+.carousel-indicators {
+    margin: 0;
+    right: auto;
+}
+
+
+/* .pagination-dots .page-dot {
     display: inline-block
 }
 
@@ -1120,12 +1158,19 @@ select option:hover {
     margin-left: 13px;
     margin-right: 13px;
 }
+ */
 
-.pagination-dots .owl-dot.active {
-    margin-right: 13px;
-    height: 2px;
-    background-color: #000000;
+.carousel-indicators li.active {
+    background-color: #000000 !important;
     width: 43px;
+}
+
+.carousel-indicators li {
+    background-color: #000000 !important;
+    width: 28px;
+    margin-left: 13px;
+    margin-right: 13px;
+    transition: all 0.3s ease-in-out !important;
 }
 
 .page-dot a {
@@ -1187,9 +1232,14 @@ select option:hover {
     border: 1px solid #c4c4c4;
     border-radius: 50%;
     background-color: #ffffff;
-    padding: 5px 7px;
     font-size: 15px;
     transition: all 0.3s;
+    width: 36px;
+    height: 36px;
+    line-height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .social-icons a:hover {
@@ -1202,6 +1252,18 @@ select option:hover {
     margin-left: 10px;
 }
 
+.social-icons li:nth-child(1) a {
+    color: #4d70a8;
+}
+
+.social-icons li:nth-child(2) a {
+    color: #4F4E6C;
+}
+
+.social-icons li:nth-child(3) a {
+    color: #FF2929;
+}
+
 .social-icons li {
     display: inline-block;
 }
@@ -1210,7 +1272,11 @@ select option:hover {
     margin-top: 8px;
 }
 
-.footer-list li a:hover {
+.footer-list li .section:hover {
+    color: #71b85f;
+}
+
+.footer-list li .package:hover {
     color: #71b85f;
 }
 

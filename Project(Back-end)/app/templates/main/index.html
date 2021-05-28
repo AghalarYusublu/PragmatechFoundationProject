@@ -37,20 +37,20 @@
                             </button>
                             <div class="collapse navbar-collapse" id="navbarNav">
                                 <ul class="navbar-nav">
-                                    {% for item in menu %}
+                                    {% for item in newList%}
                                     <li class="nav-item">
-                                        <a class="menu-link flex" id="programs" onclick="scrollPrograms(this)">{{item.link_name}} </a>
+                                        <a class="menu-link flex" id="{{item['menuID']}}" onclick="{{item['menuItem']}}">{{item['menu'].link_name}} </a>
                                     </li>
                                     {% endfor %}
                                     <!-- <li class="nav-item">
                                         <a class="menu-link flex" id="programs" onclick="scrollPrograms(this)">Proqramlar </a>
                                     </li> -->
-                                    <li class="nav-item">
+                                    <!--  <li class="nav-item">
                                         <a class="menu-link flex" id="about" onclick="scrollAbout(this)">Haqqımızda</a>
                                     </li>
                                     <li class="nav-item">
                                         <a class="menu-link flex" id="clients" onclick="scrollClients(this)">Müştərilər</a>
-                                    </li>
+                                    </li> -->
 
                                 </ul>
                             </div>
@@ -61,34 +61,32 @@
                                 class=" close-icon fas fa-times"></i></button>
                         <div class="navbar-orderDiv">
                             <h3>SİFARİŞİNİZİ TAMAMLAYIN</h3>
-                            <form class="mailform">
+                            <form class="mailform" action="{{url_for('orders')}}" method="POST">
                                 <div class="row">
                                     <div class="col-12">
-                                        <form action="{{url_for('orders')}}" method="POST">
-                                            <div class="form-group">
-                                                <select class="form-control manual-size" id="exampleFormControlSelect1" name="package_name">
-                                                    <option value="" disabled selected hidden>Yemək paketi seçin
-                                                    </option>
-                                                    {% for item in package %}
-                                                    <option>{{item.package}}</option>
-                                                    {% endfor %}
+                                        <div class="form-group">
+                                            <select class="form-control manual-size" id="exampleFormControlSelect1" name="package_name">
+                                                <option value="" disabled selected hidden>Yemək paketi seçin
+                                                </option>
+                                                {% for item in package %}
+                                                <option value="{{item.package}}">{{item.package}}</option>
+                                                {% endfor %}
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="email" class="form-control manual-size" name="email" id="exampleFormControlInput1" placeholder="E-mail" onfocus="this.placeholder=''" onblur="this.placeholder='E-mail'" />
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" class="form-control manual-size" name="phone" placeholder="Telefon" onfocus="this.placeholder=''" onblur="this.placeholder='Telefon'">
+                                        </div>
+                                        <div class="form-group">
 
-                                                </select>
-                                            </div>
-                                            <div class="form-group">
-                                                <input type="email" class="form-control manual-size" name="email" id="exampleFormControlInput1" placeholder="E-mail" onfocus="this.placeholder=''" onblur="this.placeholder='E-mail'" />
-                                            </div>
-                                            <div class="form-group">
-                                                <input type="text" class="form-control manual-size" name="phone" placeholder="Telefon" onfocus="this.placeholder=''" onblur="this.placeholder='Telefon'">
-                                            </div>
-                                            <div class="form-group">
+                                            <textarea class="form-control" name="comment" id="exampleFormControlTextarea1" style="height: 230px" placeholder="Şərh" rows="3" onfocus="this.placeholder=''" onblur="this.placeholder='Şərh'"></textarea>
+                                        </div>
+                                        <div class="form-group">
+                                            <input class="button button-primary" style="border:none" type="submit" name="complete_order_btn" value="SİFARİŞİ TAMAMLA">
+                                        </div>
 
-                                                <textarea class="form-control" name="comment" id="exampleFormControlTextarea1" style="height: 230px" placeholder="Şərh" rows="3" onfocus="this.placeholder=''" onblur="this.placeholder='Şərh'"></textarea>
-                                            </div>
-                                            <div class="form-group">
-                                                <input class="button button-primary" style="border:none" type="submit" name="complete_order_btn" value="SİFARİŞİ TAMAMLA">
-                                            </div>
-                                        </form>
                                     </div>
 
                                 </div>
@@ -108,21 +106,14 @@
         </div>
         <div class="banner-slider">
             {% for item in banner %}
-            <div class="banner-slide active">
+            <div class="banner-slide">
                 <div class="container">
                     <div class="row" style="align-items: center;">
                         <div class="col-lg-5 mobile-mg-t" style="margin-top: 160px;">
                             <h3 class="title">{{item.b_title}}</h3>
-                            <h1> <span class="point">#1</span> {{item.b_subtitle}} </h1>
+                            <h1><span class="point">#1</span> {{item.b_subtitle}} </h1>
                             <p class="txt">{{item.b_txt}}
                             </p>
-
-                            <div class="pagination">
-                                <span class="page-num-1">01</span>
-                                <span class="page-num page-num-disable">02</span>
-                                <span class="page-num page-num-disable">03</span>
-                                <span class="page-num page-num-disable">04</span>
-                            </div>
                             <p class="postitle">{{item.b_postitle}}</p>
                         </div>
                         <div class="box-round-wrap">
@@ -132,6 +123,12 @@
                 </div>
             </div>
             {% endfor %}
+            <div class="pagination">
+                <span class="page-num active">01</span>
+                <span class="page-num ">02</span>
+                <span class="page-num ">03</span>
+                <span class="page-num ">04</span>
+            </div>
         </div>
     </section>
     <section id="section-about">
@@ -193,7 +190,8 @@
                         </div>
                         <p class="product-text">{{item.p_txt}}</p>
                         <a class="button button-primary btn-order">İNDİ SİFARİŞ VER</a>
-                        <div><a class="link-border" target="_blank" href="{{item.p_menu_pdf_url}}">menyunu aç (pdf)</a></div>
+                        <div><a class="link-border" target="_blank" href="{{item.p_menu_pdf_url}}">menyunu aç (pdf)</a>
+                        </div>
                     </div>
                 </div>
                 {% endfor %}
@@ -289,24 +287,41 @@
                             </div>
                             <div class="testemonials-words">
                                 <div class="testemonials-owl">
-                                    <div class="testemonials-slides d-flex">
+                                    <!--   <div class="testemonials-slides d-flex">
                                         {% for item in testimonials %}
                                         <div class="slide" id="slide-2">
                                             <p>{{item.client_testimonial}}</p>
                                             <h3 class="client-name">{{item.clinet_name}}</h3>
                                         </div>
                                         {% endfor %}
+                                    </div> -->
+                                    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                                        <div class="carousel-inner">
+                                            {% for item in testimonials %}
+                                            <div class="carousel-item">
+                                                <p>{{item.client_testimonial}}</p>
+                                                <h3 class="client-name">{{item.clinet_name}}</h3>
+                                            </div>
+                                            {% endfor %}
+
+
+                                        </div>
+                                        <ol class="carousel-indicators">
+                                            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                                            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                                            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                                        </ol>
 
                                     </div>
                                 </div>
 
 
-                                <ul class="pagination-dots">
+                                <!-- <ul class="pagination-dots">
                                     <li class="page-dot"> <a class="owl-dot active" id="dot1" onclick="pageSlide(this)"><span></span></a>
                                     </li>
                                     <li class="page-dot"> <a class="owl-dot" id="dot2" onclick="pageSlide(this)"><span></span></a> </li>
                                     <li class="page-dot"> <a class="owl-dot" id="dot3" onclick="pageSlide(this)"><span></span></a> </li>
-                                </ul>
+                                </ul> -->
                             </div>
                         </div>
                         <a class="button button-primary testemonials-btn" href="#">RƏYİNİZİ GÖNDƏRİN</a>
@@ -347,8 +362,8 @@
                             <ul class="social-icons">
                                 {% for item in social_link %}
                                 <li>
-                                    <a target="_blank" style="color: #4d70a8;" href="{{item.s_icon_url}}"><i
-                                            class="{{item.s_icon}}"></i></a>
+                                    <a target="_blank" href="{{item.s_icon_url}}">
+                                        <i class="{{item.s_icon}}"></i></a>
 
                                 </li>
                                 {% endfor %}
@@ -361,9 +376,9 @@
                         BÖLMƏLƏR
                     </h3>
                     <ul class="footer-list">
-                        <li><a href="">Proqramlar</a></li>
-                        <li><a href="">Haqqımızda</a></li>
-                        <li><a href="">Müştərilər</a></li>
+                        <li><a class="section" href="">Proqramlar</a></li>
+                        <li><a class="section" href="">Haqqımızda</a></li>
+                        <li><a class="section" href="">Müştərilər</a></li>
                     </ul>
                 </div>
                 <div class="col-lg-2 col-md-6">
@@ -372,7 +387,7 @@
                     </h3>
                     <ul class="footer-list">
                         {% for item in package %}
-                        <li><a href="#">{{item.package}}</a></li>
+                        <li><a class="package" href="#">{{item.package}}</a></li>
 
                         {% endfor %}
                     </ul>

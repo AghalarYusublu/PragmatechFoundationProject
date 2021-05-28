@@ -19,11 +19,18 @@ def orders():
             email=request.form['email'],
             phone=request.form['phone'],
             comment=request.form['comment'],
-            complete_order_btn=request.form['complete_order_btn']
+            complete_order_btn=request.form['complete_order_btn'],
+            foodpackage_id=request.form['package_name']
         )
         db.session.add(order)
         db.session.commit()  
-        return redirect(url_for('admin_tables'))
+        return redirect(url_for('main'))
     return render_template('main/index.html')
 
 
+@app.route('/orders/delete/<id>',methods=['GET','POST'])
+def orders_delete(id):
+    order=Orders.query.get(id)
+    db.session.delete(order)
+    db.session.commit()
+    return redirect(url_for('admin_tables'))

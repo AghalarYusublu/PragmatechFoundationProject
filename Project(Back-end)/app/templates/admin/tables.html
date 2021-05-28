@@ -190,16 +190,18 @@
                                 <tbody>
                                     {% for order in orders %}
                                     <tr>
+                                        <td>{{order.id}}</td>
+
                                         <td>{{order.package_name}}</td>
                                         <td class="text-primary ">
                                             {{order.email}}
                                         </td>
                                         <td>{{order.phone}}</td>
                                         <td class="text-primary ">{{order.comment}}</td>
-                                        <td>{{order.complete_order_btn}}</td>
+                                        <!--  <td>{{order.complete_order_btn}}</td> -->
 
                                         <td class="text-primary ">
-                                            <a class="btn btn-white btn-link btn-sm " href="# " style="font-size: 17px; "><i class="bi bi-x-circle "></i></a>
+                                            <a class="btn btn-white btn-link btn-sm " href="{{url_for('orders_delete',id=order.id)}}" style="font-size: 17px; "><i class="bi bi-x-circle "></i></a>
                                         </td>
                                     </tr>
 
