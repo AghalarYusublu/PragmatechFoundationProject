@@ -16,7 +16,7 @@ document.addEventListener('scroll', function() {
 let scrollTop = document.querySelector(".scroll-top")
 
 document.addEventListener("scroll", function() {
-    if (window.scrollY > 550) {
+    if (window.scrollY > 700) {
         scrollTop.classList.add("active")
     } else {
         scrollTop.classList.remove("active")

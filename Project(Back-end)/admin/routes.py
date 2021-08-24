@@ -32,12 +32,10 @@ def index():
     newList=[]
     for i in range(len(menuItem)):
         newList.append({
-            'menu':menu[i],
-            'menuItem':menuItem[i],
+            'menu': menu[i],
+            'menuItem': menuItem[i],
             'menuID':menuID[i]
-        })
-
-    
+        })    
     return render_template('main/index.html',banner=banner,about=about,features=features,contact=contact,social_link=social_link,package=package,orders=orders,testimonials=testimonials,product=product,about_details=about_details,menu=menu,menuItem=menuItem,newList=newList)
 
 @app.route("/admin/tables/")
